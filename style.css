@@ -9,31 +9,45 @@
 .mainQSomos {
     display: flex;
     width: 100%;
-    height: 100vh; /* opcional, dependendo do seu layout */
 }
 
 .textQsomos {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 10rem 30rem 0 0;
+    padding: 120px 15rem 0 0;
+    text-align: left;
+    
 }
 
-/* No desktop, divide em 2 colunas (metade da tela cada) */
-@media (min-width: 1024px) { /* equivale ao breakpoint lg */
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 /* Imagem ocupando 100% do container e mantendo proporção */
 .mainQSomos img {
     width: 45%;       /* w-full */
-    height: 75%;
-    padding: 5rem;
+    height: 55%;
+    margin: 5rem;
     object-fit: cover; /* object-cover */
+    max-width: 1080px; /* Aumenta a resolução */
+    border-radius: 35px;
+    border: solid 2px;
+    box-shadow: 6px 6px 18px rgba(0,0,0,0.55); /* offset-x offset-y blur color */
 }
 
-.mainQSomos img {
-  max-width: 1080px; /* opcional */
+.cardsQsomos {
+  background-color: black;
+}
+
+.row {
+  gap: 4px
+}
+
+
+.card {
+  background-color: white;
+  width: 250px;
+  align-items: center;
+}
+
+.card img {
+  width: 45%;
 }
