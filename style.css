@@ -90,17 +90,20 @@ p {
     align-items: center;
     gap: 0.5rem;
 }
-
 .logo-icon {
-    background: linear-gradient(to right, #2563EB, #06B6D4);
-    padding: 0.5rem;
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(./image/Orbyte.png);
     border-radius: 0.5rem;
 }
 
 .logo-text {
     font-size: 20px;
     font-weight: 700;
-    background: linear-gradient(to right, #2563EB, #06B6D4);
+    background: linear-gradient(#1a3b5e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -887,7 +890,7 @@ p {
 .footer-brand-text {
     font-size: 24px;
     font-weight: 700;
-    background: linear-gradient(to right, #60A5FA, #22D3EE);
+    background: linear-gradient(#1a3b5e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
