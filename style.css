@@ -391,10 +391,6 @@ p {
     transition: box-shadow 0.3s;
 }
 
-.card_img {
-    width: 175%;
-    border-radius: 10%;
-}
 
 .value-card:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -411,10 +407,9 @@ p {
     margin-bottom: 1rem;
 }
 
-.icon-wrapper svg {
-    width: 32px;
-    height: 32px;
-    color: white;
+.icon-wrapper img {
+    width: 175%;
+    border-radius: 10%;
 }
 
 .value-card h4 {
