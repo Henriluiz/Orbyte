@@ -315,7 +315,7 @@
 
                 <div class="contact-form">
                     <h3>Envie uma Mensagem</h3>
-                    <form onsubmit="handleFormSubmit(event)">
+                    <form id="formContato" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
                             <label for="name">Nome Completo</label>
                             <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -328,7 +328,7 @@
 
                         <div class="form-group">
                             <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
+                            <input type="tel" id="fone" name="fone" placeholder="(11) 99999-9999">
                         </div>
 
                         <div class="form-group">
@@ -336,7 +336,7 @@
                             <textarea id="message" name="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="enviar">
                             Enviar Mensagem
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -344,6 +344,9 @@
                             </svg>
                         </button>
                     </form>
+                <p id="alerta"></p>
+
+                <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
                 </div>
             </div>
         </div>
@@ -434,10 +437,6 @@
     </footer>
 
     <script>
-
-
-
-
 
         // Projects Data
         // Agora é possível definir `width` e `height` por projeto.
@@ -558,12 +557,47 @@
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
         }
+        // Sleep no js
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Função para formatar e exibir a data/hora
+        function atualizarDataHora() {
+            const agora = new Date();
+            // Formata data e hora no padrão brasileiro
+            const dataFormatada = agora.toLocaleDateString('pt-BR');
+            const horaFormatada = agora.toLocaleTimeString('pt-BR');
+            // Salva em variáveis para uso no script
+            window.dataAtual = dataFormatada;
+            window.horaAtual = horaFormatada;
+        }
+        // Atualiza imediatamente ao carregar
+        atualizarDataHora();
+        // Atualiza a cada segundo
+        setInterval(atualizarDataHora, 1000);
 
         // Handle Form Submit
         function handleFormSubmit(e) {
+            (function(){
+                emailjs.init("-YSWoZbxpmpoOBXwt");
+            })();
             e.preventDefault();
+            const alerta = document.getElementById("alerta");
+            const form = e.target;
+            emailjs.send("service_pg7d5pq", "template_w1lomrc", {
+                name: form.name.value,
+                email: form.email.value,
+                fone: form.fone.value,
+                message: form.message.value,
+                date: window.dataAtual + " às " + window.horaAtual
+            }).then(() => {
+                alerta.textContent = "Mensagem enviada ✔️";
+            }, () => {
+                alerta.textContent = "Erro ao enviar ❌";
+            });
             alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            e.target.reset();
+            form.reset();
         }
 
         // Scroll Effect on Navigation
