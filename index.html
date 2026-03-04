@@ -1,94 +1,626 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbyte</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Orbyte - Transformando Ideias em Soluções Digitais</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container-nav">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/logotitulo.png" alt="Orbyte (Logo)" class="nav-logo">
-                </a>
-                <div class="nav-links">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Sobre Nós</a>
-                    <a class="nav-link" href="#">Contatos</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="container">
+            <div class="nav-container">
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="logo audiowide-regular">Bem-vindo à Orbyte</h1>
-            <h5 class="card-title">Além da órbita</h5>
-            <p>"Onde a tecnologia ultrapassa limites e conecta inovação a propósito"</p>
+
+
+
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                    </div>
+                    <span class="logo-text">Orbyte</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+                    <button class="nav-link" onclick="scrollToSection('about')">Quem Somos</button>
+                    <button class="nav-link" onclick="scrollToSection('partners')">Parceiros</button>
+                    <button class="nav-link" onclick="scrollToSection('projects')">Projetos</button>
+                    <button class="nav-link" onclick="scrollToSection('contact')">Contato</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+                <button class="nav-link" onclick="scrollToSection('about')">Quem Somos</button>
+                <button class="nav-link" onclick="scrollToSection('partners')">Parceiros</button>
+                <button class="nav-link" onclick="scrollToSection('projects')">Projetos</button>
+                <button class="nav-link" onclick="scrollToSection('contact')">Contato</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920" alt="Technology background">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Inovação em Tecnologia</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="gradient-text">Transformamos Ideias</span><br>
+                <span>em Soluções Digitais</span>
+            </h1>
+
+            <p class="hero-description">
+                Somos especialistas em desenvolver soluções tecnológicas inovadoras
+                que impulsionam o crescimento do seu negócio. Da estratégia à
+                execução, estamos ao seu lado.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    Começar Agora
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('projects')">
+                    Ver Projetos
+                </button>
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-indicator-dot"></div>
+            </div>
         </div>
     </section>
 
-    <main>
-        <section class="highlight">
-            <h2>Destaque</h2>
-            <p>Nosso compromisso é entender cada cliente e oferecer tecnologia de ponta que transforma realidades.
-            Unimos inovação a valores humanos — como educação, saúde e segurança — 
-            sempre com foco no bem-estar coletivo. Pensamos além da órbita para superar desafios e 
-            entregar resultados que fazem a diferença.</p>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Somos</h2>
+                <p>
+                    Somos uma empresa de tecnologia dedicada a transformar desafios em
+                    oportunidades através de soluções digitais inovadoras.
+                </p>
+            </div>
 
-        <section class="section_cards">
-            <div class="card card1">
-                <div class="card-body">
-                    <h5 class="card-title">Desenvolvimento de Software</h5>
-                    <p class="card-text">
-                        Sistemas sob medida para o seu negócio, com tecnologia de ponta.
-                    </p>
+            <h3 class="team-title">Nossa Equipe</h3>
+
+            <!-- Team members grid -->
+            <div class="team-grid">
+                <!-- Lead / DBA centered first -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Marcelo.jpeg" alt="Marcelo Felipe">
+                    </div>
+                    <h4>Marcelo Felipe</h4>
+                    <p class="team-role">DBA</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Nick.jpeg" alt="Nicole Fernandes">
+                    </div>
+                    <h4>Nicole Fernandes</h4>
+                    <p class="team-role">Designer</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Carlos.jpeg" alt="Carlos Eduardo">
+                    </div>
+                    <h4>Carlos Eduardo</h4>
+                    <p class="team-role">Gerente</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Andre.jpeg" alt="André Chaves">
+                    </div>
+                    <h4>André Chaves</h4>
+                    <p class="team-role">Desenvolvedor</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Roberto.jpeg" alt="Roberto Felix">
+                    </div>
+                    <h4>Roberto Felix</h4>
+                    <p class="team-role">Front‑end</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Luiz.jpeg" alt="Luiz Azevedo">
+                    </div>
+                    <h4>Luiz Azevedo</h4>
+                    <p class="team-role">Back-end</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Joao.jpeg" alt="João Pedro">
+                    </div>
+                    <h4>João Pedro</h4>
+                    <p class="team-role">Back-end</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="./image/Rodrigo.jpeg" alt="Rodrigo Ferreira">
+                    </div>
+                    <h4>Rodrigo Ferreira</h4>
+                    <p class="team-role">Back-end</p>
                 </div>
             </div>
-            <img src="./img/1.png" alt="Imagem 1" style="width: 370px;">
-            <img src="./img/2.png" alt="Imagem 2" style="width: 370px;">
-            <div class="card card2">
-                <div class="card-body">
-                    <h5 class="card-title">Banco de dados</h5>
-                    <p class="card-text">
-                        Bancos de dados seguros e eficientes que transformam informação em valor.
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Parceiros</h2>
+                <p>
+                    Colaboramos com as melhores empresas do mercado para oferecer
+                    soluções completas e integradas.
+                </p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="./image/Nexus.png" alt="Prism" style="width: 100%; background-color: rebeccapurple; border-radius: 10px;">
+                </div>
+
+                <!-- Card 2 -->
+                <div class="partner-card">
+                    <img src="./image/Prism.jpeg" alt="Prism" style="width: 100%; background-color: rebeccapurple; border-radius: 10px;">
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="partner-card">
+                    <img src="./image/corallu.jpeg" alt="Prism" style="width: 100%; background-color: rebeccapurple; border-radius: 10px;">
+                </div>
+
+                
+                </div>
+                <div class="cta-box">
+                    <h3>Quer se tornar nosso parceiro?</h3>
+                    <p>
+                        Estamos sempre em busca de parcerias estratégicas que agreguem
+                        valor aos nossos clientes. Entre em contato e vamos crescer juntos.
                     </p>
+                    <button class="cta-button" onclick="scrollToSection('contact')">Entre em Contato</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Projetos</h2>
+                <p>
+                    Conheça alguns dos projetos que desenvolvemos com excelência e
+                    inovação para nossos clientes.
+                </p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all')">Todos</button>
+                <button class="filter-btn" onclick="filterProjects('web')">Web</button>
+                <button class="filter-btn" onclick="filterProjects('mobile')">Mobile</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>
+                    Estamos prontos para transformar suas ideias em realidade. Fale
+                    conosco e descubra como podemos ajudar.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <p>
+                        Nossa equipe está disponível para atender você. Entre em contato
+                        através dos canais abaixo ou preencha o formulário.
+                    </p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <a href="mailto:contato@orbyte.com.br">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p>contato@orbyte.com.br</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="contact-item">
+                            <a href="tel:+5511999999999">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5>Telefone</h5>
+                                    <p>+55 (11) 9999-9999</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="contact-item">
+                            <a href="https://maps.google.com" target="_blank">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5>Endereço</h5>
+                                    <p>Av. Paulista, 1000 - São Paulo, SP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hours-box">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 9h às 18h</p>
+                        <p>Sábado: 9h às 13h</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form id="formContato" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="fone" name="fone" placeholder="(11) 99999-9999" maxlength="14">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="enviar">
+                            Enviar Mensagem
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                <p id="alerta"></p>
+
+                <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="info">
-            <h2>Sobre a Orbyte</h2>
-            <p>
-            A Orbyte é uma empresa de tecnologia voltada ao desenvolvimento de sistemas, oferecendo soluções inovadoras,
-            sustentáveis e de impacto global. Seu propósito é usar a tecnologia como ferramenta de transformação,
-            promovendo eficiência, segurança e bem-estar social.
-            </p>
-        </section>
-    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-text">Orbyte</div>
+                    <p class="footer-description">
+                        Transformando ideias em soluções digitais inovadoras. Sua
+                        parceira em tecnologia para o futuro.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-    <footer>
-        <div class="footer-content">
-            <div>
-                <span>Orbyte © 2025</span> | 
-                <span>contato@orbyte.com</span> | 
-                <span>(11) 99999-9999</span>
+                <div class="footer-column">
+                    <h5>Empresa</h5>
+                    <ul class="footer-links">
+                        <li><button class="footer-link" onclick="scrollToSection('about')">Sobre Nós</button></li>
+                        <li><button class="footer-link" onclick="scrollToSection('projects')">Projetos</button></li>
+                        <li><button class="footer-link" onclick="scrollToSection('partners')">Parceiros</button></li>
+                        <li><button class="footer-link" onclick="scrollToSection('contact')">Contato</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Serviços</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Desenvolvimento Web</a></li>
+                        <li><a href="#" class="footer-link">Aplicativos Mobile</a></li>
+                        <li><a href="#" class="footer-link">Cloud Computing</a></li>
+                        <li><a href="#" class="footer-link">Consultoria TI</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Recursos</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Documentação</a></li>
+                        <li><a href="#" class="footer-link">Suporte</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                Rua Exemplo, 123 - São Paulo, SP
-            </div>
-            <div class="footer-social">
-                Siga nas redes:
-                <a href="#">Instagram</a> |
-                <a href="#">Facebook</a> |
-                <a href="#">LinkedIn</a>
+
+            <div class="footer-bottom">
+                <p>© 2026 Orbyte. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+
+        // Projects Data
+        // Agora é possível definir `width` e `height` por projeto.
+        const projects = [
+            {
+                title: "ZooKids",
+                category: "mobile",
+                description: "Aprenda sobre animais enquanto expora o zoológico de um jeito divertido.",
+                image: "./image/2.png",
+                tags: ["React Native", "Expo", "JavaScript"],
+                icon: "smartphone",
+                width: "100%",
+                height: "220px"
+            },
+            {
+                title: "Página de Login",
+                category: "web",
+                description: "Login simples, seguro e rápido para qualquer tipo de sistema.",
+                image: "./image/4.png",
+                tags: ["PHP"],
+                icon: "code",
+                width: "100%",
+                height: "220px"
+            },
+            {
+                title: "Jokenpô",
+                category: "mobile",
+                description: "Pedra, papel, tesoura: um game leve, rápido e feito do zero em JavaScript",
+                image: "./image/1.png",
+                tags: ["JavaScript"],
+                icon: "smartphone",
+                width: "100%",
+                height: "220px"
+            },
+            {
+                title: "Plataforma Zenith",
+                category: "web",
+                description: "Uma plataforma que conecta pessoas e psicólogos com cuidado e organização",
+                image: "./image/3.png",
+                tags: ["HTML", "CSS", "JavaScript"],
+                icon: "code",
+                width: "100%",
+                height: "220px"
+            },
+        ];
+
+        // Icons SVG
+        const icons = {
+            smartphone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>',
+            code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
+            shopping: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>',
+            database: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>'
+        };
+
+        let currentFilter = 'all';
+
+        // Render Projects
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const filteredProjects = currentFilter === 'all' 
+                ? projects 
+                : projects.filter(p => p.category === currentFilter);
+
+            grid.innerHTML = filteredProjects.map(project => `
+                <div class="project-card">
+                    <div class="project-image-wrapper" style="height: ${project.height || '192px'}; width: ${project.width ? project.width : 'auto'};">
+                        <img src="${project.image}" alt="${project.title}" class="project-image">
+                        <div class="project-overlay">
+                            <button class="project-btn">
+                                Ver Projeto
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="project-icon-badge">
+                            ${icons[project.icon]}
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4>${project.title}</h4>
+                        <p>${project.description}</p>
+                        <div class="project-tags">
+                            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Projects
+        function filterProjects(category) {
+            currentFilter = category;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderProjects();
+        }
+
+        // Scroll to Section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.remove('active');
+            }
+        }
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        // Sleep no js
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Função para formatar e exibir a data/hora
+        function atualizarDataHora() {
+            const agora = new Date();
+            // Formata data e hora no padrão brasileiro
+            const dataFormatada = agora.toLocaleDateString('pt-BR');
+            const horaFormatada = agora.toLocaleTimeString('pt-BR');
+            // Salva em variáveis para uso no script
+            window.dataAtual = dataFormatada;
+            window.horaAtual = horaFormatada;
+        }
+        // Atualiza imediatamente ao carregar
+        atualizarDataHora();
+        // Atualiza a cada segundo
+        setInterval(atualizarDataHora, 1000);
+
+        // Handle Form Submit
+        function handleFormSubmit(e) {
+            (function(){
+                emailjs.init("-YSWoZbxpmpoOBXwt");
+            })();
+            e.preventDefault();
+            const alerta = document.getElementById("alerta");
+            const form = e.target;
+            emailjs.send("service_pg7d5pq", "template_w1lomrc", {
+                name: form.name.value,
+                email: form.email.value,
+                fone: form.fone.value,
+                message: form.message.value,
+                date: window.dataAtual + " às " + window.horaAtual
+            }).then(() => {
+                alerta.textContent = "Mensagem enviada ✔️";
+            }, () => {
+                alerta.textContent = "Erro ao enviar ❌";
+            });
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            form.reset();
+        }
+
+        // Scroll Effect on Navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navigation');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+        });
+    </script>
 </body>
 </html>
