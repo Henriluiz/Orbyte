@@ -366,9 +366,30 @@ p {
 /* Team members grid (replaces the old values grid) */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 2rem;
     justify-items: center;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .team-card {
