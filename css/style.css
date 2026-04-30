@@ -96,8 +96,14 @@ p {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(./image/Orbyte.png);
     border-radius: 0.5rem;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .logo-text {
